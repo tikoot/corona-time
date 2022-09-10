@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'index')->name('index');
+Route::view('/email/confirm', 'auth.confirm-email')->name('confirmation.notice');
+Route::view('/email/verify', 'auth.verify-email')->middleware('auth')->name('verification.notice');
 
+Route::get('/email/verify/{id}/{hash}', [RegisterController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::post('/register', [RegisterController::class, 'store'])->name('register');
 
 Route::get('/change-locale/{locale}', [LanguageController::class, 'change'])->name('locale.change');
