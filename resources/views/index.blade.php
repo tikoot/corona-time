@@ -26,7 +26,7 @@
                 <div class="text-gray mt-6 text-center">
                     {{__('register.already_have_an_account?')}} 
                     <a class="no-underline text-black" href="">
-                        {{__('register.log_in')}} 
+                        {{__('login.log_in')}} 
                     </a>
                 </div>
             </div>
