@@ -10,7 +10,7 @@ return [
 	'enter_your_email'                        => 'Enter your email',
 	'password'                                => 'Password',
 	'fill_in_password'                        => 'Fill in password',
-	'repeat_password'                         => 'repat_password',
+	'repeat_password'                         => 'Repeat password',
 	'remember_this_device'                    => 'Remember this device',
 	'sign_up'                                 => 'SIGN UP',
 	'already_have_an_account?'                => 'Already have an account?',

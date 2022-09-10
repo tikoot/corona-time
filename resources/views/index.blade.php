@@ -6,13 +6,13 @@
             <h1 class="font-black text-2xl pb-4">{{__('register.welcome_to_coronatime')}}</h1>
             <p>{{__('register.please_enter_required_info_to_sign_up')}}</p>
            <div class="max-w-sm pt-6">
-                <form method="POST" action="/register" enctype="multipart/form-data">
+                <form method="POST" action="/register" >
                     @csrf
 
                     <x-form.input name="username" placeholder="{{__('register.enter_unique_username')}}"/>
-                    <x-form.input name="email" placeholder="{{__('register.enter_your_email')}}"/>
+                    <x-form.input name="email"    placeholder="{{__('register.enter_your_email')}}"/>
                     <x-form.input name="password" placeholder="{{__('register.fill_in_password')}}"/>
-                    <x-form.input name="password" placeholder="{{__('register.repeat_password')}}"/>
+                    <x-form.input name="password" placeholder="{{__('register.repeat_password')}}" nameattr="password_confirmation" label="repeat_password"/>
 
                     <div class="flex items-center mb-6">
                         <input id="checkbox" type="checkbox" value="" class="w-5 h-5 border-lightgray  border border-solid rounded-md">
