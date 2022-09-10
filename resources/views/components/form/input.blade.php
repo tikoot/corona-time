@@ -4,7 +4,7 @@
         <label class="pb-2" 
         for="{{ $name }}"
         >
-        {{ ucwords($name) }}
+        {{ ucwords(__('register.' . $name)) }}
         </label>
 
         <input class="border-lightgray  border border-solid rounded-lg py-4 pl-6 pr-40 text-base"
