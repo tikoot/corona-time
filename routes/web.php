@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index')->name('index');
+Route::view('/', 'auth.register')->name('register');
 Route::view('/email/confirm', 'auth.confirm-email')->name('confirmation.notice');
 Route::view('/email/verify', 'auth.verify-email')->middleware('auth')->name('verification.notice');
 
 Route::get('/email/verify/{id}/{hash}', [RegisterController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
-Route::post('/register', [RegisterController::class, 'store'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
 Route::get('/change-locale/{locale}', [LanguageController::class, 'change'])->name('locale.change');
