@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="flex flex-col justify-center items-center h-screen">
+    <div class="flex flex-col justify-center items-center h-screen pt-10 ">
        <x-logo/>
         <div class='flex flex-col items-center justify-center m-auto'>
             <x-verify.checkmark/>

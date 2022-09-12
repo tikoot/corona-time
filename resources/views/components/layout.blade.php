@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   @vite('resources/css/app.css')
 </head>
-<body>
+<body class="font-inter">
   {{ $slot }}
 </body>
 </html>

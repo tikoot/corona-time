@@ -1,5 +1,5 @@
 <?php
 
 return [
-	'log_in'                                  => 'LOG IN',
+	'log_in'                                  => 'log in ',
 ];

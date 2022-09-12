@@ -15,6 +15,9 @@ module.exports = {
       red: '#dc2626',
     },
     extend: {
+      fontFamily: {
+        'inter': [ 'Inter']
+    }
     },
   },
   plugins: [],
