@@ -16,4 +16,5 @@ return [
 	'already_have_an_account?'                  => 'უკვე გაქვთ ანგარიში?',
 	'your_account_is_confirmed_you_can_sign_in' => 'თქვენი ანგარიში დადასტურებულია, შეგიძლიათ შეხვიდეთ',
 	'we_have_sent_you_a_confirmation_email'     => 'დამადასტურებელი მისამართი გამოგზავნილია',
+	'sign_up_for_free'                          => 'დარეგისტრირდით უფასოდ',
 ];

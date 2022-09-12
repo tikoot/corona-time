@@ -12,7 +12,7 @@
             </form>
                 <div class="text-gray mt-6 text-center">
                 {{__('register.already_have_an_account?')}} 
-                    <a class="no-underline text-black" href="{{ route('login') }}">
+                    <a class="no-underline text-black font-semibold" href="{{ route('login') }}">
                     {{ucwords(__('login.log_in'))}} 
                     </a>
                 </div>

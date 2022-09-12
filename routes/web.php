@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'auth.register')->name('register');
+Route::view('/login', 'auth.login')->name('login');
 Route::view('/email/confirm', 'auth.confirm-email')->name('confirmation.notice');
 Route::view('/email/verify', 'auth.verify-email')->middleware('auth')->name('verification.notice');
 
