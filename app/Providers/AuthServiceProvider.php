@@ -29,7 +29,7 @@ class AuthServiceProvider extends ServiceProvider
 		$this->registerPolicies();
 
 		VerifyEmail::toMailUsing(function ($notifiable, $url) {
-			return (new MailMessage)->view('auth.verification-verify', ['url' => $url]);
+			return (new MailMessage)->view('auth.email.verification-verify', ['url' => $url]);
 		});
 	}
 }

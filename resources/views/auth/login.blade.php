@@ -12,7 +12,7 @@
                 <label for="checkbox" class="ml-2 text-sm font-semibold">{{__('register.remember_this_device')}}</label>
                 
                 </div>
-                <a href="" class="text-blue text-sm font-semibold"> {{__('login.forgot_password?')}} </a>
+                <a href="{{ route('password.request') }}" class="text-blue text-sm font-semibold"> {{__('login.forgot_password?')}} </a>
                 </div>
 
                 <x-form.button name="{{__('login.log_in')}}"/>
