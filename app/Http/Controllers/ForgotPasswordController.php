@@ -21,4 +21,11 @@ class ForgotPasswordController extends Controller
 		? view('auth.email.verify-email')
 		: back()->withErrors(['email' => __($status)]);
 	}
+
+	public function passwordReset($token): View
+	{
+		return view('auth.password.reset-password', [
+			'token' => $token,
+		]);
+	}
 }
