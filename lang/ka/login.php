@@ -7,4 +7,5 @@ return [
 	'don’t_have_an_account?'                   => ' არ გაქვთ ანგარიში?',
 	'forgot_password?'                         => 'დაგავიწყდათ პაროლი?',
 	'reset_password'                           => 'პაროლის აღდგენა',
+	'save_changes'                             => 'ცვლილებების შენახვა',
 ];

@@ -8,4 +8,5 @@ return [
 	'don’t_have_an_account?'                  => ' Don’t have an account?',
 	'forgot_password?'                        => 'Forgot password?',
 	'reset_password'                          => 'reset password',
+	'save_changes'                            => 'save changes',
 ];
