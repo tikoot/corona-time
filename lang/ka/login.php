@@ -6,4 +6,5 @@ return [
 	'welcome_back_please_enter_your_details'   => 'კეთილი იყოს თქვენი დაბრუნება! გთხოვთ შეიყვანოთ თქვენი დეტალები',
 	'don’t_have_an_account?'                   => ' არ გაქვთ ანგარიში?',
 	'forgot_password?'                         => 'დაგავიწყდათ პაროლი?',
+	'reset_password'                           => 'პაროლის აღდგენა',
 ];
