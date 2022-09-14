@@ -2,7 +2,7 @@
     <h1 class="font-black text-2xl pb-4">{{__('login.welcome_back')}}</h1>
     <p class="text-gray">{{__('login.welcome_back_please_enter_your_details')}}</p>
         <div class="max-w-sm pt-6">
-            <form method="POST" action="/register" >
+            <form method="POST" action="/user-login" >
                 @csrf
                 <x-form.input name="username" placeholder="{{__('register.enter_unique_username')}}"/>
                 <x-form.input name="password" placeholder="{{__('register.fill_in_password')}}"/>
