@@ -30,7 +30,6 @@ class ForgotPasswordController extends Controller
 
 	public function passwordUpdate(StorePasswordReset $request): RedirectResponse
 	{
-		dd($request->token);
 		$request->user()->update([
 			'password'                         => $request->password,
 			'remember_token'                   => $request->token,
