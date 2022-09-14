@@ -3,7 +3,7 @@
        <x-assets.logo/>
         <div class='flex flex-col items-center justify-center  m-auto'>
             <x-auth.checkmark/>
-            <p class="pb-24">{{__('register.your_account_is_confirmed_you_can_sign_in')}}</p>
+            <p class="pb-24">{{__('login.your_password_has_been_updeted_successfully')}}</p>
             <a href="{{ route('login') }}" class="w-full py-3 text-center text-lg rounded-lg text-white bg-green font-black"> {{ strtoupper(__('login.sign_in'))}}</a>
         </div>
     </div>

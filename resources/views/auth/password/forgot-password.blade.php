@@ -1,6 +1,6 @@
 <x-layout>
     <div class="flex flex-col justify-center items-center m-auto h-screen max-w-sm pt-10">        
-       <x-logo/>
+       <x-assets.logo/>
         <div class='flex flex-col items-center justify-center  m-auto'>
             <h1 class="text-2xl font-black pb-14">{{ ucwords(__('login.reset_password'))}}</h1>
             <form  method='POST' action="{{ route('password.email') }}">

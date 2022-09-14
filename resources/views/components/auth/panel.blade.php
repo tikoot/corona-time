@@ -3,7 +3,7 @@
         <div class="flex flex-wrap justify-center min-h-screen">
             <div class="flex w-full px-28 pt-10 mx-auto lg:w-3/5">
                 <div class="h-1/2">
-                    <x-logo/>
+                    <x-assets.logo/>
                     <div class="xl:pt-14 pt-11">
                          {{ $slot }}
                      </div>
