@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePasswordReset;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -13,13 +14,11 @@ class ForgotPasswordController extends Controller
 	{
 		$request->validate(['email' => 'required|email']);
 
-		$status = Password::sendResetLink(
+		Password::sendResetLink(
 			$request->only('email')
 		);
 
-		return $status === Password::RESET_LINK_SENT
-		? view('auth.email.verify-email')
-		: back()->withErrors(['email' => __($status)]);
+		return redirect()->route('verification.notice');
 	}
 
 	public function passwordReset($token): View
@@ -27,5 +26,16 @@ class ForgotPasswordController extends Controller
 		return view('auth.password.reset-password', [
 			'token' => $token,
 		]);
+	}
+
+	public function passwordUpdate(StorePasswordReset $request): RedirectResponse
+	{
+		dd($request->token);
+		$request->user()->update([
+			'password'                         => $request->password,
+			'remember_token'                   => $request->token,
+		]);
+
+		return redirect()->route('confirm.password');
 	}
 }

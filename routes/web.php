@@ -22,6 +22,7 @@ Route::view('/login', 'auth.login')->name('login');
 Route::view('/email/confirm', 'auth.email.confirm-email')->name('confirmation.notice');
 Route::view('/email/verify', 'auth.email.verify-email')->middleware('auth')->name('verification.notice');
 Route::view('/forgot-password', 'auth.password.forgot-password')->name('password.request');
+Route::view('/password/confirm', 'auth.password.confirm-password')->name('confirm.password');
 
 Route::get('/email/verify/{id}/{hash}', [RegisterController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
@@ -30,3 +31,4 @@ Route::get('/change-locale/{locale}', [LanguageController::class, 'change'])->na
 
 Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLink'])->name('password.email');
 Route::get('/reset-password/{token}', [ForgotPasswordController::class, 'passwordReset'])->name('password.reset');
+Route::post('/reset-password', [ForgotPasswordController::class, 'passwordUpdate'])->name('password.update');
