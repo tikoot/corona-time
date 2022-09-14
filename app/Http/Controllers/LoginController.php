@@ -16,7 +16,7 @@ class LoginController extends Controller
 		{
 			session()->regenerate();
 
-			return view('home');
+			return view('dashboard');
 		}
 
 		return back()
