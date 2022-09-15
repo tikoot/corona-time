@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterUserRequset;
 use App\Models\User;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -23,9 +25,19 @@ class RegisterController extends Controller
 		return  redirect()->route('verification.notice');
 	}
 
-	public function verify(EmailVerificationRequest $request): RedirectResponse
+	public function verify(Request $request): RedirectResponse
 	{
-		$request->fulfill();
+		$user = User::find($request->route('id'));
+
+		if (!hash_equals((string) $request->route('hash'), sha1($user->getEmailForVerification())))
+		{
+			throw new AuthorizationException;
+		}
+
+		if ($user->markEmailAsVerified())
+		{
+			event(new Verified($user));
+		}
 
 		return redirect()->route('confirmation.notice');
 	}

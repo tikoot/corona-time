@@ -34,4 +34,4 @@ Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLink
 Route::get('/reset-password/{token}', [ForgotPasswordController::class, 'passwordReset'])->name('password.reset');
 Route::post('/reset-password', [ForgotPasswordController::class, 'passwordUpdate'])->name('password.update');
 
-Route::post('/user-login', [LoginController::class, 'login'])->name('user.login')->middleware('verified');
+Route::post('/user-login', [LoginController::class, 'login'])->name('user.login');
