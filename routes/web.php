@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,11 +17,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index')->name('index');
-Route::view('/email/confirm', 'auth.confirm-email')->name('confirmation.notice');
-Route::view('/email/verify', 'auth.verify-email')->middleware('auth')->name('verification.notice');
+Route::view('/home', 'home')->name('home');
+Route::view('/', 'auth.register')->name('register');
+Route::view('/login', 'auth.login')->name('login');
+Route::view('/email/confirm', 'auth.email.confirm-email')->name('confirmation.notice');
+Route::view('/email/verify', 'auth.email.verify-email')->middleware('auth')->name('verification.notice');
+Route::view('/forgot-password', 'auth.password.forgot-password')->name('password.request');
+Route::view('/password/confirm', 'auth.password.confirm-password')->name('confirm.password');
 
 Route::get('/email/verify/{id}/{hash}', [RegisterController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
-Route::post('/register', [RegisterController::class, 'store'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
 Route::get('/change-locale/{locale}', [LanguageController::class, 'change'])->name('locale.change');
+
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLink'])->name('password.email');
+Route::get('/reset-password/{token}', [ForgotPasswordController::class, 'passwordReset'])->name('password.reset');
+Route::post('/reset-password', [ForgotPasswordController::class, 'passwordUpdate'])->name('password.update');
+
+Route::post('/user-login', [LoginController::class, 'login'])->name('user.login')->middleware('verified');

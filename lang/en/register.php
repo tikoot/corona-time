@@ -16,4 +16,7 @@ return [
 	'already_have_an_account?'                  => 'Already have an account?',
 	'your_account_is_confirmed_you_can_sign_in' => 'Your account is confirmed, you can sign in',
 	'we_have_sent_you_a_confirmation_email'     => 'We have sent you a confirmation email',
+	'sign_up_for_free'                          => 'Sign up for free',
+	'enter_new_password'                        => 'Enter new password',
+	'new_password'                              => 'New password',
 ];
