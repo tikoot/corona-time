@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
+use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
-	public function login(StorePostRequest $request): View|RedirectResponse
+	public function login(StorePostRequest $request, User $user): View|RedirectResponse
 	{
 		$login = request()->input('login');
 		$remember = $request->input('remember');
@@ -31,5 +32,12 @@ class LoginController extends Controller
 
 		return back()
 		->withErrors(['login' => 'Provided credentials are invalid or user does not exist']);
+	}
+
+	public function logout(): RedirectResponse
+	{
+		auth()->logout();
+
+		return redirect()->route('login');
 	}
 }
