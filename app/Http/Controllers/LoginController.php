@@ -11,9 +11,11 @@ class LoginController extends Controller
 {
 	public function login(StorePostRequest $request): View|RedirectResponse
 	{
-		$attributes = $request->validated();
+		$login = request()->input('login');
 
-		if (auth()->attempt($attributes))
+		$fieldType = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+		if (auth()->attempt([$fieldType => $login, 'password' => $request->password]))
 		{
 			if (Auth::user()->email_verified_at == null)
 			{
@@ -25,6 +27,6 @@ class LoginController extends Controller
 		}
 
 		return back()
-		->withErrors(['password' => 'Incorrect Password']);
+		->withErrors(['login' => 'Provided credentials are invalid or user does not exist']);
 	}
 }
