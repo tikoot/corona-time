@@ -12,6 +12,7 @@ class StorePasswordReset extends FormRequest
 			'password'                => 'required|min:3',
 			'password_confirmation'   => 'required|same:password',
 			'token'                   => 'required',
+			'email'                   => 'required|email',
 		];
 	}
 
@@ -21,6 +22,7 @@ class StorePasswordReset extends FormRequest
 			'password.required'          => 'A message is required',
 			'password.min'               => 'Too Short',
 			'password_confirmation.same' => 'Password repeat should match the Password',
+			'email'                      => 'email is required',
 		];
 	}
 }

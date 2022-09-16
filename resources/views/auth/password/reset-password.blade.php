@@ -6,6 +6,7 @@
 
             <form  method='POST' action="{{ route('password.update')}}">
                 @csrf
+                <input type="hidden" value="{{$email}}" name="email">
                 <input type="hidden" name="token" value="{{$token}}">
                 <x-form.input name="password" placeholder="{{__('register.enter_new_password')}}" label='new_password'/> 
                 <x-form.input name="password" placeholder="{{__('register.repeat_password')}}" nameattr="password_confirmation" label="repeat_password"/>

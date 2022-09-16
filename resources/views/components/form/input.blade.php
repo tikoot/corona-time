@@ -13,6 +13,8 @@
         name="{{ $nameattr  }}" 
         id="{{ $name }}"
         placeholder="{{ $placeholder }}"
+        value="{{old($name)}}"
+
         required
         >
 
