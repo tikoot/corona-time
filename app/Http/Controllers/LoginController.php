@@ -27,7 +27,7 @@ class LoginController extends Controller
 
 			Session::put('user_session', $login);
 
-			return view('dashboard');
+			return redirect()->route('dashboard.worldwide');
 		}
 
 		return back()
