@@ -1,5 +1,5 @@
 <x-auth.panel>
-    <h1 class="font-black text-2xl pb-4">{{__('login.welcome_back')}}</h1>
+    <h1 class="font-black text-xl sm:text-2xl pb-4">{{__('login.welcome_back')}}</h1>
     <p class="text-gray">{{__('login.welcome_back_please_enter_your_details')}}</p>
         <div class="max-w-sm pt-6">
             <form method="POST" action="{{ route('dashboard') }}" >
@@ -19,7 +19,7 @@
                 <x-form.button name="{{__('login.log_in')}}"/>
             </form>
 
-            <div class="text-gray mt-6 text-center">
+            <div class="text-gray mt-6 text-center text-sm sm:text-base">
                 {{__('login.don’t_have_an_account?')}} 
                 <a class="no-underline text-black font-semibold" href="{{ route('register') }}">
                 {{ucwords(__('register.sign_up_for_free'))}} 
