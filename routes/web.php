@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LoginController;
@@ -36,4 +37,4 @@ Route::post('/dashboard', [LoginController::class, 'login'])->name('dashboard');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::view('/dashboard', 'dashboard')->name('dashboard.worldwide');
-Route::view('/dashboard/countries', 'countries')->name('dashboard.countries');
+Route::get('/dashboard/countries', [DashboardController::class, 'CountryStatistics'])->name('dashboard.countries');

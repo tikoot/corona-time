@@ -1,10 +1,8 @@
 <x-dashboard.wrap>
-
   <div class="pt-10">
-    <header class="container flex flex-col flex-wrap mx-auto text-2xl font-extrabold">{{__('dashboard.statistics_by_country')}}</header>
+    <header class="container flex flex-col flex-wrap mx-auto text-2xl font-extrabold pl-4 sm:pl-0">{{__('dashboard.statistics_by_country')}}</header>
     <section class="container flex-wrap mx-auto  divide-y divide-grey">
-      
-        <div class="flex pt-10 text-base">
+        <div class="flex pt-10 text-base pl-4 sm:pl-0">
             <a href=" {{ route('dashboard.worldwide') }}" 
                 class="mr-16"
                 >  {{__('dashboard.worldwide')}}
@@ -16,10 +14,34 @@
             </a>
       </div>
     
-      <main>
-      country
+      <main class="pt-10">
+        <div class="max-w-full py-10">
+          <div class="overflow-x-hidden  text-left shadow ring-1 ring-grey md:rounded-lg">
+            <table class="w-full table-fixed divide-y divide-grey text-sm">
+              <thead class="bg-grey">
+                <tr>                
+                  <th class="pl-4 sm:pl-10 py-5">{{__('dashboard.location')}}</th>
+                  <th class="pl-4 sm:pl-10 py-5">{{__('dashboard.new_cases')}}</th>
+                  <th class="pl-4 sm:pl-10 py-5">{{__('dashboard.deaths')}}</th>
+                  <th class="pl-4 sm:pl-10 py-5">{{__('dashboard.recovered')}}</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-grey">
+                @foreach($statistics as $statistic)
+                <tr>
+                  <td class="pl-4 sm:pl-10 py-4">{{$statistic->country}}</td>
+                  <td class="pl-4 sm:pl-10 py-4">{{$statistic->confirmed}}</td>
+                  <td class="pl-4 sm:pl-10 py-4">{{$statistic->deaths}}</td>
+                  <td class="pl-4 sm:pl-10 py-4">{{$statistic->recovered}}</td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
       </main>
     </section>
   </div>
 
 </x-dashboard.wrap>
+
