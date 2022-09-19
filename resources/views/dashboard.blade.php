@@ -1,8 +1,8 @@
 <x-dashboard.wrap>
 
   <div class="pt-10">
-    <header class="container flex flex-col flex-wrap mx-auto text-2xl font-extrabold">{{__('dashboard.worldwide_statistics')}}</header>
-    <section class="container flex-wrap mx-auto  divide-y divide-grey">
+    <header class="container flex flex-col flex-wrap mx-auto text-2xl font-extrabold  pl-4 sm:pl-0">{{__('dashboard.worldwide_statistics')}}</header>
+    <section class="container flex-wrap mx-auto  divide-y divide-grey  pl-4 sm:pl-0">
       
         <div class="flex pt-10 text-base">
             <a href=" {{ route('dashboard.worldwide') }}" 
@@ -16,8 +16,8 @@
             </a>
       </div>
     
-      <main>
-      dash
+      <main class="pt-10">
+       
       </main>
     </section>
   </div>
