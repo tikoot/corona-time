@@ -36,5 +36,5 @@ Route::post('/reset-password', [ForgotPasswordController::class, 'passwordUpdate
 Route::post('/dashboard', [LoginController::class, 'login'])->name('dashboard');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::view('/dashboard', 'dashboard')->name('dashboard.worldwide');
+Route::get('/dashboard', [DashboardController::class, 'WorldwideStatistics'])->name('dashboard.worldwide');
 Route::get('/dashboard/countries', [DashboardController::class, 'CountryStatistics'])->name('dashboard.countries');

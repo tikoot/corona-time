@@ -13,4 +13,17 @@ class DashboardController extends Controller
 			'statistics' => Statistic::all(),
 		]);
 	}
+
+	public function WorldwideStatistics(Statistic $statistic): View
+	{
+		$new_cases = $statistic->sum('confirmed');
+		$recovered = $statistic->sum('recovered');
+		$deaths = $statistic->sum('deaths');
+
+		return view('dashboard', [
+			'new_cases' => $new_cases,
+			'recovered' => $recovered,
+			'deaths'    => $deaths,
+		]);
+	}
 }

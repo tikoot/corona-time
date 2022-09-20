@@ -15,9 +15,31 @@
                 >{{__('dashboard.by_country')}}
             </a>
       </div>
-    
-      <main class="pt-10">
-       
+     
+      <main class="pt-10 h-screen">
+          <div class="flex justify-between items-center">
+            
+            <x-assets.statistic-box path="{{asset('/storage/assets/Group 1797.png')}}" 
+                        bg="url('{{asset('storage/assets/Rectangle 375.png')}}')" 
+                        attr="text-darkblue"
+                        textattr="{{__('dashboard.new_cases')}}"
+                        pt="pt-10"
+                        statistic = "$new_cases"/>
+          
+            <x-assets.statistic-box path="{{asset('/storage/assets/Group 1799.png')}}" 
+                        bg="url('{{asset('storage/assets/Rectangle 377.png')}}')"
+                        attr="text-darkgreen"
+                        textattr="{{__('dashboard.recovered')}}"
+                        pt="pt-[56px]"
+                        statistic = "$recovered"/>
+
+            <x-assets.statistic-box path="{{asset('/storage/assets/Group 1798.png')}}" 
+                        bg="url('{{asset('/storage/assets/Rectangle 376.png')}}')"
+                        attr="text-darkyellow"
+                        textattr="{{__('dashboard.deaths')}}"
+                        pt="pt-[53px]"
+                        statistic ="{{$deaths}}"/>        
+          </div>                             
       </main>
     </section>
   </div>
