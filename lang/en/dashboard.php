@@ -8,4 +8,8 @@ return [
 	'statistics_by_country' => 'Statistics by country',
 	'worldwide'             => 'Worldwide',
 	'by_country'            => 'By country',
+	'location'              => 'Location',
+	'new_cases'             => 'New cases',
+	'deaths'                => 'Deaths',
+	'recovered'             => 'Recovered',
 ];
