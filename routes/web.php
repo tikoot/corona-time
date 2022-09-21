@@ -38,3 +38,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', [DashboardController::class, 'WorldwideStatistics'])->name('dashboard.worldwide');
 Route::get('/dashboard/countries', [DashboardController::class, 'CountryStatistics'])->name('dashboard.countries');
+
+Route::get('/sort-ascend/{statistic}', [DashboardController::class, 'sortAscending'])->name('sort.ascend');
+Route::get('/sort-descend/{statistic}', [DashboardController::class, 'sortDescending'])->name('sort.descend');

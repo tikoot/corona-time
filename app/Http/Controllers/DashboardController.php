@@ -39,4 +39,22 @@ class DashboardController extends Controller
 			'deaths'    => $deaths,
 		]);
 	}
+
+	public function sortAscending($statistic): View
+	{
+		$statistics = Statistic::all()->sortBy($statistic);
+
+		return view('countries', [
+			'statistics' => $statistics,
+		]);
+	}
+
+	public function sortDescending($statistic): View
+	{
+		$statistics = Statistic::all()->sortByDesc($statistic);
+
+		return view('countries', [
+			'statistics' => $statistics,
+		]);
+	}
 }
