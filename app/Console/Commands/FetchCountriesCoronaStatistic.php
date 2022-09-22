@@ -38,17 +38,16 @@ class FetchCountriesCoronaStatistic extends Command
 			])->object();
 
 			Statistic::updateOrCreate(
-				[
-					'country'   => [
-						'en' => $country->name->en,
-						'ka' => $country->name->ka,
-					],
+				['id' => $statistic->id],
+				['country'   => [
+					'en' => $country->name->en,
+					'ka' => $country->name->ka,
+				],
 					'code'      => $country->code,
 					'confirmed' => $statistic->confirmed,
 					'recovered' => $statistic->recovered,
 					'critical'  => $statistic->critical,
-					'deaths'    => $statistic->deaths,
-				]
+					'deaths'    => $statistic->deaths, ],
 			);
 		}
 	}
