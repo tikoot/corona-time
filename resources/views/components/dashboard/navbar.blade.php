@@ -7,12 +7,12 @@
 
           <ul class="hidden sm:block"
           :class="{'flex': showMenu, 'hidden': !showMenu}">
-            <div class="flex flex-col absolute -right-5 top-14 justify-center items-left p-2 sm:static  sm:flex-row sm:divide-x sm:divide-grey">
+            <div class="flex flex-col absolute right-4 top-14 justify-center items-right pt-4 sm:p-2 bg-white sm:static  sm:flex-row sm:divide-x sm:divide-grey">
             <li >
-              <a href="#" class="pt-2 px-4 text-base text-left font-bold">{{Auth::user()->username}}</a>
+              <a href="#" class=" pb-4 sm:pb-0 sm:pt-2 sm:px-4 text-base text-left font-bold">{{Auth::user()->username}}</a>
             </li>
             <li >
-              <form id="logout-form" method="POST" action="{{route('logout')}}" class="align-middle px-4">
+              <form id="logout-form" method="POST" action="{{route('logout')}}" class="align-middle sm:px-4">
                   @csrf
                  <button class="text-sm " type="submit">{{__('dashboard.log_out')}}</button> 
               </form>
