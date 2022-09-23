@@ -11,4 +11,5 @@ return [
 	'save_changes'                                => 'save changes',
 	'sign_in'                                     => 'sign in',
 	'your_password_has_been_updeted_successfully' => 'Your password has been updeted successfully',
+	'enter_unique_username_or_email'              => 'Enter unique username or email',
 ];

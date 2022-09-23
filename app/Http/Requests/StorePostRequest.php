@@ -9,7 +9,7 @@ class StorePostRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'username'    => 'required|exists:users,username',
+			'login'       => 'required',
 			'password'    => 'required',
 		];
 	}
@@ -17,8 +17,7 @@ class StorePostRequest extends FormRequest
 	public function messages()
 	{
 		return [
-			'username.required'                 => 'The username is required.',
-			'username.exists'                   => 'This username does not exist.',
+			'login.required'                    => 'The username is required.',
 			'password.required'                 => 'A password is required',
 		];
 	}

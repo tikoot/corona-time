@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LoginController;
@@ -16,12 +17,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::view('/home', 'home')->name('home');
 Route::view('/', 'auth.register')->name('register');
 Route::view('/login', 'auth.login')->name('login');
 Route::view('/email/confirm', 'auth.email.confirm-email')->name('confirmation.notice');
-Route::view('/email/verify', 'auth.email.verify-email')->middleware('auth')->name('verification.notice');
+Route::view('/email/verify', 'auth.email.verify-email')->name('verification.notice');
 Route::view('/forgot-password', 'auth.password.forgot-password')->name('password.request');
 Route::view('/password/confirm', 'auth.password.confirm-password')->name('confirm.password');
 
@@ -34,4 +33,11 @@ Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLink
 Route::get('/reset-password/{token}', [ForgotPasswordController::class, 'passwordReset'])->name('password.reset');
 Route::post('/reset-password', [ForgotPasswordController::class, 'passwordUpdate'])->name('password.update');
 
-Route::post('/user-login', [LoginController::class, 'login'])->name('user.login')->middleware('verified');
+Route::post('/dashboard', [LoginController::class, 'login'])->name('dashboard');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/dashboard', [DashboardController::class, 'WorldwideStatistics'])->name('dashboard.worldwide');
+Route::get('/dashboard/countries', [DashboardController::class, 'CountryStatistics'])->name('dashboard.countries');
+
+Route::get('/sort-ascend/{statistic}', [DashboardController::class, 'sortAscending'])->name('sort.ascend');
+Route::get('/sort-descend/{statistic}', [DashboardController::class, 'sortDescending'])->name('sort.descend');

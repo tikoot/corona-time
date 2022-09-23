@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePasswordReset;
+use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Str;
 
 class ForgotPasswordController extends Controller
 {
@@ -21,19 +23,28 @@ class ForgotPasswordController extends Controller
 		return redirect()->route('verification.notice');
 	}
 
-	public function passwordReset($token): View
+	public function passwordReset($token, Request $request): View
 	{
 		return view('auth.password.reset-password', [
-			'token' => $token,
+			'token'  => $token,
+			'email'  => $request->email,
 		]);
 	}
 
 	public function passwordUpdate(StorePasswordReset $request): RedirectResponse
 	{
-		$request->user()->update([
-			'password'                         => $request->password,
-			'remember_token'                   => $request->token,
-		]);
+		$status = Password::reset(
+			$request->only('email', 'password', 'password_confirmation', 'token'),
+			function ($user, $password) {
+				$user->forceFill([
+					'password' => $password,
+				])->setRememberToken(Str::random(60));
+
+				$user->save();
+
+				event(new PasswordReset($user));
+			}
+		);
 
 		return redirect()->route('confirm.password');
 	}

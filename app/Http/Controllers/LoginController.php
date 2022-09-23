@@ -5,21 +5,38 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePostRequest;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
 	public function login(StorePostRequest $request): View|RedirectResponse
 	{
-		$attributes = $request->validated();
+		$login = request()->input('login');
+		$remember = $request->input('remember');
 
-		if (auth()->attempt($attributes))
+		$fieldType = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+		if (auth()->attempt([$fieldType => $login, 'password' => $request->password], $remember))
 		{
-			session()->regenerate();
+			if (Auth::user()->email_verified_at == null)
+			{
+				return abort(403, 'Your email address is not verified.');
+			}
 
-			return view('dashboard');
+			Session::put('user_session', $login);
+
+			return redirect()->route('dashboard.worldwide');
 		}
 
 		return back()
-		->withErrors(['password' => 'Incorrect Password']);
+		->withErrors(['login' => 'Provided credentials are invalid or user does not exist']);
+	}
+
+	public function logout(): RedirectResponse
+	{
+		auth()->logout();
+
+		return redirect()->route('login');
 	}
 }
