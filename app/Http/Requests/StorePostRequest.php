@@ -13,12 +13,4 @@ class StorePostRequest extends FormRequest
 			'password'    => 'required',
 		];
 	}
-
-	public function messages()
-	{
-		return [
-			'login.required'                    => 'The username is required.',
-			'password.required'                 => 'A password is required',
-		];
-	}
 }

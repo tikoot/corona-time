@@ -18,5 +18,8 @@ return [
 	'we_have_sent_you_a_confirmation_email'     => 'დამადასტურებელი მისამართი გამოგზავნილია',
 	'sign_up_for_free'                          => 'დარეგისტრირდით უფასოდ',
 	'enter_new_password'                        => 'შეიყვანეთ ახალი პაროლი',
+	'confirmation_email'                        => 'დადასტურების ელ.წერილი',
+	'click_this_button_to_verify_your_email'    => 'დააწკაპუნეთ ამ ღილაკზე თქვენი ელ-ფოსტის დასადასტურებლად',
+	'verify_email'                              => 'დაადასტურეთ ელფოსტა',
 	'new_password'                              => 'ახალი პაროლი',
 ];

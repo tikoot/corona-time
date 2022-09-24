@@ -149,10 +149,27 @@ return [
 	| specify a specific custom language line for a given attribute rule.
 	|
 	*/
-
 	'custom' => [
-		'attribute-name' => [
-			'rule-name' => 'custom-message',
+		'email' => [
+			'required' => 'E-mail address is required!',
+			'unique'   => 'The email has already been taken',
+		],
+		'username' => [
+			'required' => 'Username is required',
+			'min'      => 'Too Short, min 3 symbol',
+			'unique'   => 'The username has already been taken',
+		],
+		'password' => [
+			'required'                   => 'A message is required',
+			'min'                        => 'Too Short',
+			'password_confirmation.same' => 'Password Confirmation should match the Password',
+		],
+		'password_confirmation' => [
+			'same'                       => 'Password Confirmation should match the Password',
+			'min'                        => 'Too Short',
+		],
+		'login' => [
+			'required' => 'The username is required.',
 		],
 	],
 
