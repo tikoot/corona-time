@@ -62,9 +62,9 @@
         
       <x-assets.email-image/>
         
-        <h1>Confirmation email</h1>
-        <p>click this button to verify your email </p>
-        <a href="{{$url}}">VERIFY EMAIL
+        <h1>{{__('register.confirmation_email')}}</h1>
+        <p>{{__('register.click_this_button_to_verify_your_email')}} </p>
+        <a href="{{$url}}"> {{ strtoupper(__('register.verify_email'))}}
         </a>
     </div>
 </x-layout>

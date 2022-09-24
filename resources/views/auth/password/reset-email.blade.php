@@ -63,10 +63,10 @@
         
       <x-assets.email-image/>
         
-        <h1>Recover password</h1>
-        <p>click this button to verify your email </p>
+        <h1>{{__('register.recover_password')}}</h1>
+        <p>{{__('register.click_this_button_to_verify_your_email')}}</p>
         <a href="{{$url}}">
-            RECOVER PASSWORD
+           {{ strtoupper(__('register.recover_password'))}}
         </a>
     </div>
 </x-layout>
