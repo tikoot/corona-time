@@ -8,7 +8,7 @@
   
         </label>
 
-        <input class="w-full border border-lightgray border-solid rounded-lg py-4 pl-6 text-base mt-2 @error($nameattr) border-red @enderror "
+        <input class="w-full border border-lightgray border-solid rounded-lg py-4 pl-6 text-base mt-2 @error($nameattr) border-red @enderror"
         type="{{ $name }}"
         name="{{ $nameattr  }}" 
         id="{{ $name }}"

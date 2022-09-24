@@ -1,72 +1,39 @@
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-    body{
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-    }
-
-    div{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
-
-    h1{
-        font-size: 25px;
-        font-weight: 900;
-        margin-top: 40px;
-    }
-
-    p{
-        font-size: 18px;
-        padding-bottom: 22px;
-    }
-    a{
-        background: #0FBA68; 
-        border-radius: 8px;
-        padding: 19px 109px;
-        text-decoration: none;
-        color: #fff;
-        font-size: 16px;
-        font-weight: 900;
-    }
-
-    @media(max-width: 675px) {
-        div{
-            padding:16px;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0;
         }
-        h1{
-            font-size: 20px;
-        }
-        p{
-            font-size: 16px;
-        }
-        a{
-            font-size: 14px;
-            padding: 15px 70px;
-            white-space: nowrap;
-            text-align: center;
-            margin: 20px;
-            max-width: 100%;
-          
-        }
-    }
-</style>
+    </style>
+  </head>
+  <body style="font-size: 19px; max-width: 500px; margin: 0 auto; padding:3%">
+    <div style="background-color: #fff;">
+    
+      <div>
+        <img src="https://files.fm/thumb_show.php?i=ssnnn4xy9" alt="" style="max-width: 100%"
+        />
+      </div>
+      <div style="text-align: center; background-color: #fff;">
+        <h1 style="font-size: 25px; font-weight: 900; margin-top: 40px; text-align:center; padding-bottom:16px;">{{__('register.recover_password')}}</h1>
 
-<x-layout>
-    <div>
-        
-      <x-assets.email-image/>
-        
-        <h1>{{__('register.recover_password')}}</h1>
-        <p>{{__('register.click_this_button_to_verify_your_email')}}</p>
-        <a href="{{$url}}">
-           {{ strtoupper(__('register.recover_password'))}}
-        </a>
+        <p style="font-size: 18px; padding-bottom:40px; text-align:center;">{{__('register.click_this_button_to_verify_your_email')}}</p>
+
+
+        <a href="{{$url}}" 
+           style="background: #0FBA68; border-radius: 8px; text-decoration: none; padding: 19px 80px; max-width:392px;
+                  color: #fff; font-size: 16px; font-weight: 900; margin:auto;
+"
+            >  {{ strtoupper(__('register.recover_password'))}}
+         </a>
+
+        <hr />
+      </div>
     </div>
-</x-layout>
+  </body>
+</html>
