@@ -9,7 +9,7 @@ class StorePostRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'login'       => 'required',
+			'login'       => 'required|min:3',
 			'password'    => 'required',
 		];
 	}

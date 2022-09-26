@@ -160,7 +160,7 @@ return [
 			'unique'   => 'The username has already been taken',
 		],
 		'password' => [
-			'required'                   => 'A message is required',
+			'required'                   => 'A password is required',
 			'min'                        => 'Too Short',
 			'password_confirmation.same' => 'Password Confirmation should match the Password',
 		],
@@ -170,6 +170,7 @@ return [
 		],
 		'login' => [
 			'required' => 'The username is required.',
+			'min'      => 'Too Short, min 3 symbol',
 		],
 	],
 
