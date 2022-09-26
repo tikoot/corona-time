@@ -15,14 +15,4 @@ class StorePasswordReset extends FormRequest
 			'email'                   => 'required|email',
 		];
 	}
-
-	public function messages()
-	{
-		return [
-			'password.required'          => 'A message is required',
-			'password.min'               => 'Too Short',
-			'password_confirmation.same' => 'Password repeat should match the Password',
-			'email'                      => 'email is required',
-		];
-	}
 }

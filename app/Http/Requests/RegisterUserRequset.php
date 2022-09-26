@@ -15,16 +15,4 @@ class RegisterUserRequset extends FormRequest
 			'password_confirmation' => 'required|min:3|same:password',
 		];
 	}
-
-		public function messages()
-		{
-			return [
-				'username.required'          => 'Username is required',
-				'username.min'               => 'Too Short',
-				'email.required'             => 'Email is required',
-				'password.required'          => 'A message is required',
-				'password.min'               => 'Too Short',
-				'password_confirmation.same' => 'Password Confirmation should match the Password',
-			];
-		}
 }

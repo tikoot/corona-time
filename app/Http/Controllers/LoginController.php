@@ -28,9 +28,7 @@ class LoginController extends Controller
 
 			return redirect()->route('dashboard.worldwide');
 		}
-
-		return back()
-		->withErrors(['login' => 'Provided credentials are invalid or user does not exist']);
+		return redirect()->route('login')->withErrors(['login' => trans('login.provided_credentials_are_invalid_or_user_does_not_exist')]);
 	}
 
 	public function logout(): RedirectResponse
