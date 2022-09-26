@@ -22,7 +22,7 @@
       <div style="text-align: center; background-color: #fff;">
         <h1 style="font-size: 25px; font-weight: 900; margin-top: 40px; text-align:center; padding-bottom:16px;">{{__('register.recover_password')}}</h1>
 
-        <p style="font-size: 18px; padding-bottom:40px; text-align:center;">{{__('register.click_this_button_to_verify_your_email')}}</p>
+        <p style="font-size: 18px; padding-bottom:40px; text-align:center;">{{__('register.click_this_button_to_recover_password')}}</p>
 
 
         <a href="{{$url}}" 

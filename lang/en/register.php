@@ -21,6 +21,7 @@ return [
 	'new_password'                              => 'New password',
 	'confirmation_email'                        => 'Confirmation email',
 	'click_this_button_to_verify_your_email'    => 'click this button to verify your email',
+	'click_this_button_to_recover_password'     => 'click this button to recover a password',
 	'verify_email'                              => 'verify email',
 	'recover_password'                          => 'Recover password',
 ];
