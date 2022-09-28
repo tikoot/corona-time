@@ -12,10 +12,7 @@
               <a href="#" class=" pb-4 sm:pb-0 sm:pt-2 sm:px-4 text-base text-left font-bold">{{Auth::user()->username}}</a>
             </li>
             <li >
-              <form id="logout-form" method="POST" action="{{route('logout')}}" class="align-middle sm:px-4">
-                  @csrf
-                 <button class="text-sm " type="submit">{{__('dashboard.log_out')}}</button> 
-              </form>
+              <a href="{{route('logout')}}" class=" align-middle sm:px-4 text-sm">{{__('dashboard.log_out')}}</a>
             </li>
           </div>
        
