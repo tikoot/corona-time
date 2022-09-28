@@ -24,7 +24,7 @@ Route::view('/email/verify', 'auth.email.verify-email')->name('verification.noti
 Route::view('/forgot-password', 'auth.password.forgot-password')->name('password.request');
 Route::view('/password/confirm', 'auth.password.confirm-password')->name('confirm.password');
 
-Route::get('/email/verify/{id}/{hash}', [RegisterController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
+Route::get('/email/verify/{id}/{hash}', [RegisterController::class, 'verify'])->name('verification.verify');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
 Route::get('/change-locale/{locale}', [LanguageController::class, 'change'])->name('locale.change');
