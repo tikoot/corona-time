@@ -19,7 +19,7 @@
     
         <form class="relative pb-10 pl-4 sm:pl-0"> 
           <div class="absolute top-[14px] left-6">
-              <img src="{{asset('/storage/assets/Vector.png')}}" alt="">
+              <img src="{{asset('/assets/Vector.png')}}" alt="">
           </div>
         <input type="search" value="{{request('search')}}" name="search" class="h-12 w-full sm:w-64 pl-14 pr-8 text-[15px] outline-0 text-gray font-medium rounded-lg z-0 sm:border sm:border-lightgray" placeholder="Search by country">
           <div class="absolute top-3 right-6">

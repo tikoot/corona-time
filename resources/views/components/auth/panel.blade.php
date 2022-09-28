@@ -12,7 +12,7 @@
                      </div>
                 </div>
             </div>
-                <img class="hidden object-cover w-full h-screen lg:block lg:w-2/5" src="{{asset('storage/assets/covid.png')}}" alt="covid img">
+                <img class="hidden object-cover w-full h-screen lg:block lg:w-2/5" src="{{asset('/assets/covid.png')}}" alt="covid img">
             </div>
     </section>
 </x-layout>
