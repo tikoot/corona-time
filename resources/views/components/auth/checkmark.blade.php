@@ -1,1 +1,1 @@
-<img src="{{asset('storage/assets/icons8-checked.png')}}" class="pb-4 " alt="checkmark">
+<img src="{{asset('/assets/icons8-checked.png')}}" class="pb-4 " alt="checkmark">

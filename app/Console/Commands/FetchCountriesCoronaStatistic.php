@@ -13,7 +13,7 @@ class FetchCountriesCoronaStatistic extends Command
 	 *
 	 * @var string
 	 */
-	protected $signature = 'fetch-covid-statistic';
+	protected $signature = 'fetch:covid-statistic';
 
 	/**
 	 * The console command description.
@@ -50,5 +50,6 @@ class FetchCountriesCoronaStatistic extends Command
 					'deaths'    => $statistic->deaths, ],
 			);
 		}
+		$this->info('Statistic Fetched Successfully');
 	}
 }
