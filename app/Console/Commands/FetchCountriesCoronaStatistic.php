@@ -50,5 +50,6 @@ class FetchCountriesCoronaStatistic extends Command
 					'deaths'    => $statistic->deaths, ],
 			);
 		}
+		$this->info('Statistic Fetched Successfully');
 	}
 }
